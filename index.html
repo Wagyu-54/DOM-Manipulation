@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Recent Journal Articles</title>
+    <link rel="stylesheet" href="10_css.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="java.js" defer></script>
+</head>
 
+<body>
+
+<header>
+    <p>MyBlog.com</p>
+
+    <nav>
+        <button type="button">Recent Articles</button>
+        <button type="button">Services</button>
+        <button type="button">Mission</button>
+        <button type="button">About Us</button>
+    </nav>
+</header>
+
+<main>
+
+<div id="showArea">
+
+    <div id="toggleButtons">
+        <button onclick="showFilter()" id="filterButton" type="button">Filter Articles</button>
+        <button onclick="showAddNew()" id="addButton" type="button">Add New Article</button>
+    </div>
+
+    <!-- ADD NEW FORM -->
+    <form id="newContent">
+        <h2 class="formRow">Add New Article</h2>
+
+        <div class="formRow">
+            <label for="inputHeader">Title: </label>
+            <input id="inputHeader" type="text">
+        </div>
+
+        <div class="formRow">
+            <label>Type:</label>
+            <input name="articleType" id="opinionRadio" type="radio" value="opinion">
+            <label for="opinionRadio">Opinion</label>
+
+            <input name="articleType" id="recipeRadio" type="radio" value="recipe">
+            <label for="recipeRadio">Recipe</label>
+
+            <input name="articleType" id="lifeRadio" type="radio" value="update">
+            <label for="lifeRadio">Life Update</label>
+        </div>
+
+        <div class="formRow">
+            <label for="inputArticle">Text:</label>
+            <textarea id="inputArticle"></textarea>
+        </div>
+
+        <div class="formRow">
+            <button onclick="addNewArticle()" type="button">Add New Article</button>
+        </div>
+    </form>
+
+    <!-- FILTER FORM -->
+    <form id="filterContent">
+        <h2>Filter by Article Type</h2>
+
+        <label>Opinion</label>
+        <input onclick="filterArticles()" id="opinionCheckbox" type="checkbox" checked>
+
+        <label>Recipe</label>
+        <input onclick="filterArticles()" id="recipeCheckbox" type="checkbox" checked>
+
+        <label>Update</label>
+        <input onclick="filterArticles()" id="updateCheckbox" type="checkbox" checked>
+    </form>
+
+</div>
+
+<h1>Recent Journal Articles</h1>
+
+<div id="articleList">
+    <!-- YOUR EXISTING ARTICLES STAY HERE -->
+    <!-- Leave your 10 articles exactly as they are -->
+</div>
+
+<footer>
+    <p>Contact Us!</p>
+</footer>
+
+</main>
+
+</body>
+</html>
