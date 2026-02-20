@@ -1,118 +1,24 @@
 /* =========================
-   SHOW AREA + TOGGLE BUTTONS
-========================= */
-
-#showArea
-{
-    display: flex;
-    flex-direction: column;
-    width: 75%;
-    margin: auto;
-    margin-top: 30px;
-}
-
-#toggleButtons
-{
-    margin: auto;
-    display: flex;
-    width: 20%;
-    justify-content: space-evenly;
-}
-
-#toggleButtons > *
-{
-    height: 50px;
-    border-radius: 10px;
-}
-
-/* =========================
-   FORMS
-========================= */
-
-form#newContent{
-    display: none;
-    flex-direction: column;
-    margin: auto;
-    width: 75%;
-    align-items: center;
-}
-
-form#filterContent{
-    display: block;
-    margin: auto;
-}
-
-.formRow
-{
-    width: 400px;
-    font-size: 1.3em;
-    margin: 10px 0;
-}
-
-/* =========================
-   ARTICLE STYLING
-========================= */
-
-article.opinion{
-    border: 1px solid red;
-}
-
-article.recipe{
-    border: 1px solid lightskyblue;
-}
-
-article.update{
-    border: 1px solid lightseagreen;
-}
-
-.marker
-{
-    float:right;
-    font-size: 1.5em;
-    padding: 3px 8px;
-    color: white;
-    border-radius: 4px;
-}
-
-.date
-{
-    float:left;
-    font-size: 1.5em;
-}
-
-.opinion .marker
-{
-    background-color: red;
-}
-
-.recipe .marker
-{
-    background-color: lightskyblue;
-}
-
-.update .marker
-{
-    background-color: lightseagreen;
-}
-
-/* =========================
-   GENERAL PAGE STYLING
+   GLOBAL PAGE STYLING
 ========================= */
 
 body{
     padding: 0;
     margin: 0;
     width: 100%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular',
+                'Lucida Grande', 'Lucida Sans Unicode',
+                Geneva, Verdana, sans-serif;
 }
 
 main{
     width: 100%;
 }
 
-main h1
-{
+main h1{
     text-align: center;
-    font-size: clamp(12px, 4vw, 24px);
+    font-size: clamp(18px, 3vw, 28px);
+    margin-top: 30px;
 }
 
 /* =========================
@@ -124,76 +30,11 @@ header{
     text-align: center;
     position: sticky;
     top: 0px;
-    font-size: 2.5vw;
+    font-size: 2.2vw;
     width: 100%;
     margin: 0;
     border: 1px solid black;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 
-                 'Lucida Sans', Arial, sans-serif;
-}
-
-/* =========================
-   ARTICLE GRID LAYOUT
-========================= */
-
-main > div#articleList
-{
-    display:flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: center;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 
-                'Lucida Grande', 'Lucida Sans Unicode', 
-                Geneva, Verdana, sans-serif
-}
-
-article{
-    width: 30%;
-    margin-left:1.5%;
-    margin-right: 1.5%;
-    margin-bottom: 20px;
-    padding: 10px;
-    text-align: justify;
-    font-size: clamp(8px, 1.5vw, 12px);
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer
-{
-    padding-top: 5vh;
-    font-size: 2vw;
-    padding-bottom: 10vh;
-    color: white;
-    background-color: black;
-}
-
-footer p{
-    text-align: center;
-    margin: auto;
-    width: 50%;
-}
-
-address > div
-{
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: space-evenly;
-    width: 75%;
-    margin: auto;
-}
-
-/* =========================
-   LINKS
-========================= */
-
-a:visited
-{
-    color: darkblue;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
 }
 
 /* =========================
@@ -202,25 +43,19 @@ a:visited
 
 nav{
     display: flex;
-    flex-wrap: nowrap;
     width: 100%;
-    margin: 0;
-    padding: 0;
     justify-content: space-evenly;
     background-color: black;
 }
 
-nav button
-{
+nav button{
     color:white;
     background-color: blue;
-    text-decoration: none;
-    font-size: 1.5vw;
-    display: inline;
+    font-size: 1.3vw;
     width: 20%;
     padding: 1vw 0vw;
-    white-space: nowrap;
     border: none;
+    white-space: nowrap;
 }
 
 nav button:hover{
@@ -232,24 +67,207 @@ nav button:active{
 }
 
 /* =========================
+   SHOW AREA + TOGGLE BUTTONS
+========================= */
+
+#showArea{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+#toggleButtons{
+    margin: auto;
+    margin-bottom: 25px;
+    display: flex;
+    width: 30%;
+    justify-content: space-evenly;
+}
+
+#toggleButtons button{
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+form#newContent{
+    display: none;
+    flex-direction: column;
+    margin: auto;
+    width: 60%;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.15);
+}
+
+form#newContent label{
+    display: block;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+form#newContent input,
+form#newContent textarea{
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form#filterContent{
+    margin: auto;
+    padding: 15px;
+    background-color: #fbfbfb;
+    border: 1px solid #ddd;
+    width: 60%;
+    border-radius: 6px;
+}
+
+form#filterContent label{
+    margin-right: 6px;
+    font-weight: bold;
+}
+
+.formRow{
+    margin: 10px 0;
+}
+
+/* =========================
+   ARTICLE GRID LAYOUT
+========================= */
+
+main > #articleList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* =========================
+   ARTICLE STYLING
+========================= */
+
+article{
+    width: 30%;
+    padding: 12px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-align: justify;
+    font-size: clamp(10px, 1.2vw, 14px);
+    position: relative;
+    background-color: white;
+}
+
+/* Border colors by type */
+article.opinion{
+    border: 3px solid red;
+}
+
+article.recipe{
+    border: 3px solid lightskyblue;
+}
+
+article.update{
+    border: 3px solid lightseagreen;
+}
+
+/* Floating label in top right */
+.marker{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.opinion .marker{
+    background-color: red;
+}
+
+.recipe .marker{
+    background-color: lightskyblue;
+}
+
+.update .marker{
+    background-color: lightseagreen;
+}
+
+article h2{
+    margin-top: 0;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+article p{
+    margin-bottom: 10px;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+a{
+    text-decoration: underline;
+}
+
+a:visited{
+    color: darkblue;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding-top: 5vh;
+    font-size: 2vw;
+    padding-bottom: 10vh;
+    color: white;
+    background-color: black;
+    margin-top: 40px;
+}
+
+footer p{
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
+
+/* =========================
    RESPONSIVE DESIGN
 ========================= */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px){
     article{
-        width: 75%;
-        margin: auto;
-        margin-bottom: 20px;
+        width: 45%;
     }
 }
 
-@media screen and (max-width: 1000px){
-
-    main{
-        width: 100%;
+@media screen and (max-width: 600px){
+    article{
+        width: 75%;
+        margin: auto;
     }
 
-    header{
-        width: 100%;
+    #toggleButtons{
+        width: 70%;
+    }
+
+    form#newContent,
+    form#filterContent{
+        width: 90%;
     }
 }
